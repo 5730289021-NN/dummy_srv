@@ -15,6 +15,9 @@ def trigger_response(request):
     )
 
 rospy.init_node('sos_service')                     # initialize a ROS node
+
+rospy.loginfo('SOS Service Run')
+
 my_service = rospy.Service(                        # create a service, specifying its name,
     '/fake_911', Trigger, trigger_response         # type, and callback
 )
